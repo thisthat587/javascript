@@ -1,24 +1,63 @@
-// num = [2, 3, 4, 5, 6]
-// numbers={}
-// fun=()=>{}
-// console.log(typeof num)
-// console.log(typeof fun)
-// console.log(typeof numbers)
-// console.log(typeof Date)
-// console.log(typeof );
+// const person = {
+//     name: "piyush",
+//     age: 22,
+//     car: {
+//         brand: 'BMW'
+//     }
+// }
 
-function listDevanagariCharacters() {
-    const start = 0x0900; // Start of Devanagari Unicode block
-    const end = 0x097F;   // End of Devanagari Unicode block
+// person.address = 'purnia';
 
-    for (let i = start; i <= end; i++) {
-        const character = String.fromCharCode(i);
-        console.log(`Character: ${character} \t Unicode Value: U+${i.toString(16).toUpperCase().padStart(4, '0')} ${i}`);
+// const array = JSON.stringify(person)//object into array...
+
+// console.log(person)
+// // console.log(array)
+
+// for (value in person) {
+//     // console.log(person[value])
+// }
+// const jsonstring=
+//     `{
+//     "name": "piyush",
+//     "age": 22,
+//     "car": {
+//         "brand": "BMW"
+//     },
+//     "address": "purnia"
+//     }`; 
+// console.log(jsonstring)
+
+// const date=new Date()
+
+// console.log(JSON.stringify(date));
+
+// const person = {
+//     name: "John",
+//     age: function () {
+//         return 30;
+//     }
+// };
+// person.age = person.age.toString();
+// console.log(person)
+// const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     get fullName(){
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// };
+
+// const full=person.fullName
+// console.log(full)
+const person = {
+    firstName: "",
+    lastName: "",
+    set fullName(value){
+        const name=value.split(' ')
+        this.firstName=name[0];
+        this.lastName=name[1];
     }
-}
-
-// Call the function to list Devanagari characters
-listDevanagariCharacters();
-
-
-
+};
+person.fullName="Dilip singh";
+console.log(person.firstName);
+console.log(person.lastName);
