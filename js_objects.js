@@ -39,17 +39,19 @@
 // };
 // person.age = person.age.toString();
 // console.log(person)
-// const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     get fullName(){
-//         return `${this.firstName} ${this.lastName}`
-//     }
-// };
-
-// const full=person.fullName
-// console.log(full)
-const person = {
+console.log("getter--------------------\n");
+const person1 = {
+    firstName: "John",
+    lastName: "Doe",
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+};
+//getter must have return value as this function is used to get any type of value...
+const fullname=person1.fullName
+console.log(fullname)
+console.log("\nsetter--------------------\n");
+const person2 = {
     firstName: "",
     lastName: "",
     set fullName(value){
@@ -58,6 +60,18 @@ const person = {
         this.lastName=name[1];
     }
 };
-person.fullName="Dilip singh";
-console.log(person.firstName);
-console.log(person.lastName);
+person2.fullName="Dilip singh";
+console.log(person2.firstName);
+console.log(person2.lastName);
+// setter must have parameters bcoz it is used to set value of properties in object provided by users...
+
+// #####################################################################################################
+// Built-In javascript constructors... 
+// new String()    // A new String object
+// new Number()    // A new Number object
+// new Boolean()   // A new Boolean object
+// new Object()    // A new Object object
+// new Array()     // A new Array object
+// new RegExp()    // A new RegExp object
+// new Function()  // A new Function object
+// new Date()      // A new Date object
