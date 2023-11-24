@@ -1,10 +1,11 @@
-//this is the functions which are passed to the parameter of another function.
-
+// A callback is a function passed as an argument to another function.
 let numbers=[2,-2,3,4,5,-21,-3,33];
 
 function removeNegative(numbers){
-    numbers=numbers.filter(num=>num>=0)
+    numbers=numbers.filter(positiveNumbers=(num) => num>=0)
+    // console.log(index);
     return numbers;
 }
 
-console.log(removeNegative(numbers))
+console.log("Positive numbers : ",removeNegative(numbers))
+console.log("Original array : ",numbers);
