@@ -10,9 +10,9 @@ let promise = new Promise((resolve, reject) => {
 })
 
 promise.then((value) => {
-        console.log(value);
-        return "OK";
-    })
+    console.log(value);
+    return "OK";
+})
     .then((value) => {
         console.log(value);
     })
