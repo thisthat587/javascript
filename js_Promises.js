@@ -1,6 +1,6 @@
 let promise = new Promise((resolve, reject) => {
-    // setTimeout( 3000)
-    x = 9;
+
+    x = 0;
     if (x === 0) {
         resolve("SAME");
     }
@@ -9,8 +9,7 @@ let promise = new Promise((resolve, reject) => {
     }
 })
 
-promise
-    .then((value) => {
+promise.then((value) => {
         console.log(value);
         return "OK";
     })
@@ -19,4 +18,6 @@ promise
     })
     .catch((error) => {
         console.log(error);
+    }).finally(() => {
+        console.log("It Ends.......");
     })
