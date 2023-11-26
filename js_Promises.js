@@ -1,42 +1,80 @@
-// let promise = new Promise((resolve, reject) => {
+// // new Promise((resolve, reject) => {
+// //   setTimeout(() => {
+// //     console.log("Hello world...!");
+// //     resolve();
+// //   }, 2000);
+// // })
+// //   .then((value) => {
+// //     console.log(value);
+// //   })
+// //   .finally(() => {
+// //     console.log("All Promise Done...!");
+// //   })
 
-//     x = 0;
-//     if (x === 0) {
-//         resolve("SAME");
-//     }
-//     else {
-//         reject("Error Occured...!");
-//     }
+// new Promise((resolve, reject) => {
+//         let error = false;
+//         if (!error) {
+//                 resolve({ username: "piyush", password: "123" });
+//         } else {
+//                 reject("ERROR: Something went wrong...!");
+//         }
 // })
+//         .then((user) => {
+//                 console.log(user);
+//                 return user.username;
+//         })
+//         .then((username) => {
+//                 console.log(username);
+//         })
+//         .catch((error) => {
+//                 console.log(error);
+//         })
+//         .finally(() => console.log("Promise Consumed...!"));
 
-// promise.then((value) => {
-//     console.log(value);
-//     return "OK";
-// })
-//     .then((value) => {
-//         console.log(value);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     }).finally(() => {
-//         console.log("It Ends.......");
-//     })
+// let promiseFive = new Promise((resolve, reject) => {
+//         let error = true;
+//         if (!error) {
+//                 resolve("Promise Resolved...!");
+//         } else {
+//                 reject("ERROR: Something went wrong...!")
+//         }
+// });
 
+// async function consumepromiseFive() {
+//         try {
+//                 const response = await promiseFive;
+//                 console.log(response);
 
-function myDisplayer(){
-    console.log("Hello world...!");
-}
-function getFile(myCallback) {
-    let req = new XMLHttpRequest();
-    req.open('GET', "mycar.html");
-    req.onload = function() {
-      if (req.status == 200) {
-        myCallback(req.responseText);
-      } else {
-        myCallback("Error: " + req.status);
+//         } catch (error) {
+//                 console.log(error);
+//         }
+// }
+
+// consumepromiseFive();
+
+// async function getAllusers() {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//         try {
+//                 console.log(typeof (response));
+//                 const data = await response.json();
+//                 console.log(data);
+//                 console.log(typeof(data));
+//         } catch (error) {
+//                 console.log("ERROR : ", error);
+//         }
+// }
+
+// getAllusers();
+
+fetch('https://jsonplaceholder.typicode.com/users').then(value => {
+
+      try {
+            const response = value.json();
+            return response;
+      } catch {
+            console.log("Error")
       }
-    }
-    req.send();
-  }
-  
-  getFile(myDisplayer)
+}).then(data => {
+      console.log(data);
+})
+
