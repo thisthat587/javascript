@@ -1,13 +1,18 @@
 import expres from 'express';
 
-// const app=expres();
+const app=expres();
 
-// app.get('/',(req,res)=>{
-//     res.send("Server is ready.....");
-// })
+app.get('/githubapi',(req,res)=>{
+    console.log(req,res)
+    fetch('https://api.github.com/users/thisthat587').then(value=>{
+        return value.json();
+    }).then(data=>{
+        res.send(data);
+    })
+})
 
-// const port=process.env.PORT || 4000;
+const port=process.env.PORT || 3000;
 
-// app.listen(()=>{
-//     console.log("GOOD TO GO.....");
-// })
+app.listen(port,()=>{
+    console.log("GOOD TO GO.....");
+})

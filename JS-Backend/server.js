@@ -1,24 +1,16 @@
-// import expres from 'express';
+import expres from 'express';
 
-// const app=expres();
+const app=expres();
 
-// app.get('/',(req,res)=>{
-//     res.send("Server is ready.....");
-// })
+app.get('/',(req,res)=>{
+    res.send("Server is ready.....");
+})
 
-// const port=process.env.PORT || 4000;
+const port=process.env.PORT || 3000;
 
-// app.listen(port,()=>{
-//     console.log("GOOD TO GO.....");
-// })
-const person = {
-    name: 'John Doe',
-    age: 30,
-    occupation: 'Developer'
-  };
-  
-  const { name, age, occupation, city = 'Unknown' } = person;
-console.log(name,"\n",age,"\n",occupation,"\n",city);  
+app.listen(port,()=>{
+    console.log("GOOD TO GO.....");
+})
 // const print = console.log
 // let arr = [1,2,4,5]
 // let sum = arr.map(element => {
