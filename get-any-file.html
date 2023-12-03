@@ -1,0 +1,29 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="file" id="get-file">
+</body>
+<script>
+  // Get a reference to the file input element
+  const fileInput = document.getElementById('get-file');
+  // Add an event listener to the input for changes
+  fileInput.addEventListener('change', function () {
+    // Access the selected file
+    const selectedFile = fileInput.files[0];
+    console.log(selectedFile)
+    // Check if a file is selected
+    if (selectedFile) {
+      // Get the name of the selected file
+      const fileName = selectedFile.name;
+
+      // Store the file name in a variable or use it as needed
+      console.log('Selected file name:', fileName);
+      // You can store it in a variable, send it to a server, etc.
+    }
+  });
+<!-- "C:\Users\Piyush Singh\Pictures\Screenshots\Screenshot (101).png" -->
+</script>
