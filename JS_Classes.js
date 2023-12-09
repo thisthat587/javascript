@@ -1,17 +1,19 @@
-class ClassWithPrivateStaticField {
-    static #privateStaticField = 42;
+class Cat {
+    constructor(name) {
+        this.name = name;
+    }
 
-    static publicStaticMethod(privatevalue) {
-        // When invoked through super, `this` still refers to Subclass
-        return this.#privateStaticField;
+    speak() {
+        console.log(`${this.name} makes a noise.`);
     }
 }
 
-class Subclass extends ClassWithPrivateStaticField {
-    callSuperMethod() {
-        return ClassWithPrivateStaticField.publicStaticMethod();
+class Lion extends Cat {
+    speak() {
+        super.speak();
+        console.log(`${this.name} roars.`);
     }
 }
 
-const sub=new Subclass();
-sub.callSuperMethod(); 
+const l = new Lion("Fuzzy");
+l.speak();
