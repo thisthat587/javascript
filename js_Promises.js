@@ -75,6 +75,9 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => {
             console.log("Error")
       }
 }).then(data => {
-      console.log(data);
+      // console.log(data);
+      data.map((each) => {
+            console.log(each.company);
+      })
 })
 
