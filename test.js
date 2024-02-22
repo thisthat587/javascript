@@ -1,3 +1,5 @@
-const numbers = [3, 1, 4, 1, 5, 9, 2, 2, 5, 3, 5];
-const sum = numbers.filter((a) => a % 2 === 0 );
-console.log(sum)
+const array = [1, 2, 3, 54, 6, 8, 9, 8, 6, 5, 35, 7, 8, 8, 5, 4, 3]
+
+const anotherArray = array.map((each) => (each % 2 ===0))
+
+console.log(anotherArray);
